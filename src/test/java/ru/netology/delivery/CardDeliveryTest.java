@@ -26,12 +26,12 @@ public class CardDeliveryTest {
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 7;
         var secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
-        $("[data-test-id='city'] .input__control").setValue(validUser.getCity());
-        $("[data-test-id='date'] .input__control")
+        $("[data-test-id='city'] input").setValue(validUser.getCity());
+        $("[data-test-id='date'] input")
                 .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
-        $("[data-test-id='date'] .input__control").setValue(firstMeetingDate);
-        $("[data-test-id='name'] .input__control").setValue(validUser.getName());
-        $("[data-test-id='phone'] .input__control").setValue(validUser.getPhone());
+        $("[data-test-id='date'] input").setValue(firstMeetingDate);
+        $("[data-test-id='name'] input").setValue(validUser.getName());
+        $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $("[data-test-id='agreement']").click();
         $(".button").click();
         $("[data-test-id='success-notification'] .notification__title")
@@ -39,9 +39,9 @@ public class CardDeliveryTest {
         $("[data-test-id='success-notification'] .notification__content")
                 .shouldHave(Condition.exactText("Встреча успешно запланирована на " + firstMeetingDate),
                         Duration.ofSeconds(15));
-        $("[data-test-id='date'] .input__control")
+        $("[data-test-id='date'] input")
                 .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
-        $("[data-test-id='date'] .input__control").setValue(secondMeetingDate);
+        $("[data-test-id='date'] input").setValue(secondMeetingDate);
         $(".button").click();
         $("[data-test-id='replan-notification'] .notification__title")
                 .shouldHave(Condition.exactText("Необходимо подтверждение"), Duration.ofSeconds(15));

@@ -52,4 +52,4 @@ public class CardDeliveryTest {
                 .shouldHave(Condition.exactText("Встреча успешно запланирована на " + secondMeetingDate),
                         Duration.ofSeconds(15));
     }
-}}
+}

@@ -1,4 +1,5 @@
-package ru.netology.delivery.data;
+package data;
+
 import com.github.javafaker.Faker;
 import lombok.Value;
 
@@ -47,3 +48,4 @@ public class DataGenerator {
         String phone;
     }
 }
+
